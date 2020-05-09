@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			border: 1px solid red;
+			width: 200px;
+			height: 500px;
+			float: left;
+		}
+		.box1 > p{
+			background-color: #ccc;
+			margin: 10px 0;
+		}
+		.box2{
+			border: 1px solid red;
+			width: 200px;
+			float: left;
+			height: 500px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<p draggable="true">312321321321</p>
+		<p draggable="true">312321321321</p>
+		<p draggable="true">312321321321</p>
+		<p draggable="true">312321321321</p>
+	</div>
+	<div class="box2"></div>
+</body>
+<script src='js/jquery-1.11.3.min.js'></script>
+<script>
+	$(function(){
+		var p = document.querySelectorAll('.box1 > p');
+
+		for(var i in p){
+			p[i].name = i;
+			p[i].ondragstart = function(){
+				console.log(this.name)
+			}
+		}
+
+		$('.box2')[0].ondrop = function(){
+			console.log("en")
+		}
+		$('.box2')[0].ondragover = function(ev){
+				var ev = ev || window.event;
+				ev.preventDefault();
+				console.log("1@")
+		}
+	});
+</script>
+</html>

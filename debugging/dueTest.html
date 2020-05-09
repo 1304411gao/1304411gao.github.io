@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<embed src='http://player.youku.com/player.php/sid/XMzE2ODk5NjY4/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
+	<iframe height=498 width=510 src='http://player.youku.com/embed/XMzE2ODk5NjY4' frameborder=0 'allowfullscreen'></iframe>
+
+</body>
+<script type="text/javascript">
+	
+	console.log(sensitive("傻逼"));
+
+	//输入屏蔽关键字
+	function sensitive(_str){
+	    //关键字数组
+	    var arr = ["傻逼", "fuck", "suck", "狗逼", "操你妈"];
+
+	    var i = 0;
+	    while (_str.indexOf(arr[i]) < 0){
+
+	        i++;
+	        if(i > arr.length){
+	        	return true;
+	        	break;
+	        } 
+	    }
+	    return false;
+	}
+
+
+</script>
+</html>

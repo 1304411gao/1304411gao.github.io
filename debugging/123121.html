@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="sele">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <img src="https://img.mofyi.com/Ayto/2019-1/1c98g.png" alt="">
+</body>
+<script src="https://cdn.mofyi.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    
+    var options = $('option');
+
+    function a(n, o){
+    	let arr = n.concat(o);
+    	return [...new Set(arr)]
+    }
+    function getArrDifference(arr1, arr2) {
+	 	return arr1.concat(arr2).filter(function(v, i, arr) {
+	 		return arr.indexOf(v) === arr.lastIndexOf(v);
+	 	});
+	}
+    
+    console.log(getArrDifference(['abc','bbc'], ['bbc']))
+
+</script>
+</html>

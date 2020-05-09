@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="https://lib.baomitu.com/element-ui/2.4.10/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://img.mofyi.com/Ayto/formvip/form-making/dist/FormMaking.css">
+  	<link rel="stylesheet" href="https://img.mofyi.com/Ayto/formvip/cover.css">
+  	<style>
+  		.el-checkbox__label{
+  			white-space: wrap;
+  		}
+  	</style>
+  </head>
+  <body>
+    <div class="wrap">
+     <div id="app" class="app1">
+      <fm-generate-form :data="jsonData" :remote="remoteFuncs" :value="editData" ref="generateForm">
+        
+      </fm-generate-form>
+      <el-button type="primary" @click="handleSubmit">提交</el-button>
+     </div>
+    </div>
+    <script src="https://img.mofyi.com/Ayto/formvip/vue.js"></script>
+    <script src="https://lib.baomitu.com/element-ui/2.4.10/index.js"></script>
+    <script src="https://img.mofyi.com/Ayto/formvip/form-making/dist/FormMaking.umd.js"></script>
+    <script src="https://img.mofyi.com/Ayto/formvip/cover.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          jsonData: {"list":[{"type":"checkbox","name":"1. 您参加本次展会的目的是？（可多选）What is your expectation to attend this Showcase? (Multi Options)","icon":"icon-check-box","options":{"inline":false,"defaultValue":[],"showLabel":false,"options":[{"value":"寻求希尔顿国内酒店合作机会 Looking for cooperation opportunities with Hilton Hotels China"},{"value":"寻求希尔顿国外酒店合作机会 Looking for cooperation opportunities with Hilton Hotels oversea"},{"value":"了解希尔顿酒店市场信息 Learn Hilton hotel market information"},{"value":"新选项a没有明确目的 No specific purpose"}],"required":true,"width":"","remote":false,"remoteOptions":[],"props":{"value":"value","label":"label"},"remoteFunc":"func_1552442508000_67781"},"key":"1552442508000_67781","model":"checkbox_1552442508000_67781","rules":[{"required":true,"message":"1. 您参加本次展会的目的是？（可多选）What is your expectation to attend this Showcase? (Multi Options)必须填写"}]},{"type":"checkbox","name":"2. 您对本次展会满意的地方是？（可多选）What did you like about this Showcase? (Multi Options)","icon":"icon-check-box","options":{"inline":false,"defaultValue":[],"showLabel":false,"options":[{"value":"小程序使用灵活方便 WeChat Mini Program is helpful"},{"value":"展会流程清晰, 参展酒店数量多且分布合理 Schedule is well arranged, booths are well distributed"},{"value":"参展酒店人员专业, 能够及时提供有效帮助 Participation hotel staffs are professional and helpful"},{"value":"抽奖环节奖品丰富 Lucky Draw is attractive"}],"required":true,"width":"","remote":false,"remoteOptions":[],"props":{"value":"value","label":"label"},"remoteFunc":"func_1552442608000_52573"},"key":"1552442608000_52573","model":"checkbox_1552442608000_52573","rules":[{"required":true,"message":"您对本次展会满意的地方是？（可多选）What did you like about this Showcase? (Multi Options)必须填写"}]},{"type":"checkbox","name":"您对本次展会最不满意的地方是？ What did you most dislike about this Showcase?","icon":"icon-check-box","options":{"inline":false,"defaultValue":[],"showLabel":false,"options":[{"value":"小程序实用性不高 WeChat Mini Program is not user friendly enough"},{"value":"展会流程不清晰, 找寻需要酒店不方便, 设计分散 Schedule is not well arranged, booths are not well distributed"},{"value":"参展酒店目的地不够丰富，不能完全满足需求 Participation hotels and destinations cannot completely meet your needs"},{"value":"抽奖环节奖品少, 不够吸引人 Lucky Draw is not attractive"}],"required":true,"width":"","remote":false,"remoteOptions":[],"props":{"value":"value","label":"label"},"remoteFunc":"func_1552442718000_28291"},"key":"1552442718000_28291","model":"checkbox_1552442718000_28291","rules":[{"required":true,"message":"您对本次展会最不满意的地方是？ What did you most dislike about this Showcase?必须填写"}]},{"type":"radio","name":"对于本次展会的总体评价是？ Please rate your satisfaction with the 2019 Hilton GCM Showcase.","icon":"icon-radio-active","options":{"inline":false,"defaultValue":"","showLabel":false,"options":[{"value":"非常满意 Very satisfied","label":"选项1"},{"value":"基本满意 Somewhat satisfied","label":"选项2"},{"value":"一般 Neutral","label":"选项3"},{"value":"不满意 Somewhat dissatisfied"},{"value":"非常不满意 Very dissatisfied"}],"required":true,"width":"","remote":false,"remoteOptions":[],"props":{"value":"value","label":"label"},"remoteFunc":"func_1552442764000_92041"},"key":"1552442764000_92041","model":"radio_1552442764000_92041","rules":[{"required":true,"message":"对于本次展会的总体评价是？ Please rate your satisfaction with the 2019 Hilton GCM Showcase.必须填写"}]},{"type":"radio","name":"您是否会推荐其他合作伙伴参加明年的希尔顿大中华区巡展？ Would you recommend others to attend Hilton GCM Showcase next year? ","icon":"icon-radio-active","options":{"inline":false,"defaultValue":"","showLabel":false,"options":[{"value":"会\t  Will","label":"选项1"},{"value":"不会 Will not","label":"选项2"},{"value":"仍需考虑 Not Sure","label":"选项3"}],"required":true,"width":"","remote":false,"remoteOptions":[],"props":{"value":"value","label":"label"},"remoteFunc":"func_1552442806000_91583"},"key":"1552442806000_91583","model":"radio_1552442806000_91583","rules":[{"required":true,"message":"您是否会推荐其他合作伙伴参加明年的希尔顿大中华区巡展？ Would you recommend others to attend Hilton GCM Showcase next year? 必须填写"}]},{"type":"textarea","name":"请您提出针对本次展会改进的建议和意见 Please let us know if you have any other suggestions on this Showcase. ","icon":"icon-diy-com-textarea","options":{"width":"100%","defaultValue":"","required":true,"pattern":"","placeholder":"","remoteFunc":"func_1552442829000_3092"},"key":"1552442829000_3092","model":"textarea_1552442829000_3092","rules":[{"required":true,"message":"请您提出针对本次展会改进的建议和意见 Please let us know if you have any other suggestions on this Showcase. 必须填写"}]}],"config":{"labelWidth":100,"labelPosition":"top","size":"small"}},
+          editData: {},
+          remoteFuncs: {
+            
+          }
+        },
+        methods: {
+          handleSubmit () {
+            this.$refs.generateForm.getData().then(data => {
+              // 数据校验成功
+              // data 为获取的表单数据
+            }).catch(e => {
+              // 数据校验失败
+            })
+          }
+        }
+      })
+    </script>
+  </body>
+  </html>

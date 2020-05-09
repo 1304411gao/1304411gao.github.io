@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<style>
+	body{
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+	}
+	a{
+		display: block;
+		height: 1230px;
+	}
+</style>
+<body>
+	<a id="aaa" href="baidu.com">dasdsadsa</a>
+<script type="text/javascript">
+	function selectText() {
+	    if (document.selection) {
+	        var range = document.body.createTextRange();
+	        range.moveToElementText(document.getElementById('selectable'));
+	        range.select();
+	    } else if (window.getSelection) {
+	    	console.log(1);
+	        var range = document.createRange();
+	        range.selectNode(document.getElementById('selectable'));
+	        window.getSelection().addRange(range);
+	    }
+	}
+
+</script>
+<span id="selectable">点击后选中<br />点击后选中<br />点击后选中<br />点击后选中<br /></span> 
+<input type="button" onclick="selectText()" value="点我" />
+<input class="" type="text" value="12312312">
+</body>
+<script type="text/javascript">
+	document.onclick= function(e){
+		// e.preventDefault()
+		return false;
+	}
+	window.onscroll =  function(e){
+		console.log(1)
+		e.preventDefault();
+		return false;
+	}
+</script>
+</html>

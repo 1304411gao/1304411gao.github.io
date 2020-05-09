@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery File Upload Example</title>
+<link rel="stylesheet" href="css/aaa.css">
+</head>
+<body>
+	<p>45sAbJDOJlkdhnwkjfnl;2412</p>
+<input id="fileupload" type="file" name="files[]" data-url="server/php/" multiple>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/vendor/jquery.ui.widget.js"></script>
+<script src="js/jquery.iframe-transport.js"></script>
+<script src="js/jquery.fileupload.js"></script>
+<script>
+	function getNewStr(_str){
+		var arr = _str.split('')
+		var html = ''
+		for(var i = 0; i < arr.length; i++){
+			html += '<span>'+ arr[i] +'</span>'
+		}
+		console.log(html)
+	}
+	getNewStr('2019年度中国护士志愿精神贡献奖、上海市优秀科普志愿者三等奖、上海交通大学医学院安全管理案例大赛三等奖、上海护理学会优秀青年护理人才导师、第三十一届上海市优秀发明选拔赛职工技术创新成果入围奖；2018年度上海东海职业技术学院优秀带教老师； 2017年度上海市优质护理服务先进医院/主要负责人、第二十九届上海市优秀发明选拔赛职工技术创新成果银奖、上海市红十字南丁格尔志愿护理服务队 优秀团队/主要负责人、上海市普陀区“十佳志愿者”； 2016年  度第六期上海市医务职工科技创新“星光计划”入围奖、第六期上海市医务职工科技创新“星光计划”二等奖、 第六期上海市医务职工科技创新“星光计划”三等奖、上海市“健康中国，美丽上海”公益广告大赛银奖、 上海市“深化优质护理、改善护理服务”示范项目、上海市普陀区“深化优质护理、改善护理服务”十佳示范项目、 上海市妇女儿童家庭公益服务创意赛二等奖、交通大学护理学院优秀临床教师、上海市医务工会优秀职工发明选拔赛银奖； 2015年度上海市医务工会优秀职工发明选拔赛银奖、铜奖/主要负责人、上海市医务职工科技创新“星光计划”入围奖')
+</script>
+</body> 
+</html>

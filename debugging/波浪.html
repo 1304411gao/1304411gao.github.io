@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css"> 
+    body {
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);;
+  overflow: hidden;
+}
+body:before, body:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  min-width: 500vw;
+  min-height: 500vw;
+  background-color: #fff;
+  -webkit-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+body:before {
+  top: 45vh;
+  border-radius: 49%;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+body:after {
+  top: 42vh;
+  opacity: .5;
+  border-radius: 49.6%;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: translate(-50%, 0) rotateZ(0deg);
+            transform: translate(-50%, 0) rotateZ(0deg);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -.3%) rotateZ(180deg);
+            transform: translate(-50%, -.3%) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, 0%) rotateZ(360deg);
+            transform: translate(-50%, 0%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: translate(-50%, 0) rotateZ(0deg);
+            transform: translate(-50%, 0) rotateZ(0deg);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -.3%) rotateZ(180deg);
+            transform: translate(-50%, -.3%) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, 0%) rotateZ(360deg);
+            transform: translate(-50%, 0%) rotateZ(360deg);
+  }
+}
+  </style>
+</head>
+<body>
+  
+</body>
+</html>

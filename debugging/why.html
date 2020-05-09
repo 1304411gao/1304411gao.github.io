@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        canvas{
+            display: block;
+            margin: 100px auto
+        }
+        #text{
+            width: 300px;
+            height: 40px;
+            display: block;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        #btn{
+            background-color: #0ba6ff;
+            color: #fff;
+            width: 120px;
+            height: 40px;
+            display: block;
+            margin: 0 auto;
+            color: #fff;
+            outline: none;
+            border: none;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mainCanvas"></canvas>
+    <input id="text" type="text" value="要写的文字">
+    <button id="btn">生成图片</button>
+</body>
+<script>
+    var pr = 3
+    var bgImage = new Image()
+    bgImage.src = 'img/bg.png'
+    var canvas = document.querySelector('#mainCanvas'),
+        text = document.querySelector('#text'),
+        btn = document.querySelector('#btn')
+    var ctx = canvas.getContext('2d')
+    bgImage.onload = function(){
+        canvas.width = this.width / 2
+        canvas.height = this.height / 2 
+        canvas.style.width = this.width / pr + 'px'
+        canvas.style.height = this.height / pr + 'px'
+
+        draw(text.value)
+    }
+    function draw(_text){
+        ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height)
+        ctx.font = "60px blod Arial";
+        ctx.fontWeight = 'blod'
+        ctx.fillStyle = "#fff";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(_text, canvas.width/2, canvas.height - 50);
+    }
+    text.onkeyup = function(){
+        draw(text.value)
+    }
+    btn.onclick = function(){
+
+        var src = canvas.toDataURL("image/jpeg");
+        console.log(src)
+
+        var a = document.createElement('a')
+        a.href = src
+        a.setAttribute('download', 'chart-download')
+        a.click()
+    }
+
+
+    
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var obj = {
+	    name: 'a',
+	    getName : function () {
+	        console.log(this.name);
+	    }
+	}
+	var name = 'b';
+	var fn = obj.getName;
+	obj.getName(); // 输出？
+	fn() // 输出？
+
+</script>
+</html>

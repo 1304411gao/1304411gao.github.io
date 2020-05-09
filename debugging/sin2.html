@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+		canvas{
+			
+			background-color: #333;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+</body>
+<script>
+	const canvas = document.getElementById('canvas');
+	const ctx = canvas.getContext('2d');
+	var ratio = getPixelRatio(ctx);
+    canvas.style.width = document.documentElement.clientWidth + 'px';
+    canvas.style.height = 300 + 'px';
+    canvas.width = document.documentElement.clientWidth * ratio;
+    canvas.height = 300 * ratio;
+    // 放大倍数
+    ctx.scale(ratio, ratio);
+
+	
+
+	
+	let aa = 0;
+	const a = Math.PI / 180 *2;
+
+	var enn = 2;
+	const width = canvas.width/ratio / enn;
+	
+	let slideArr = [];
+	for(let i = 0; i < 10; i++){
+		let silde = new Slide('rgb('+randomFn(0, 255)+', '+randomFn(0, 255)+', '+randomFn(0, 255)+')', randomFn(10, 100)/10000, randomFn(70, 200)/100, 140);
+		slideArr.push(silde)
+	}
+
+	setInterval(function(){
+		ctx.clearRect(0 ,0, canvas.width, canvas.height);
+
+		for(let i = 0; i < slideArr.length - 1; i++){
+			slideArr[i].run()
+		}
+	},1);
+
+	function Slide(color, speed, pro, amplitude){
+
+		this.aa = 0;
+		this.color = color;
+		this.speed = speed;
+		this.pro = pro;
+		this.amplitude = amplitude;
+
+		this.run = function(){
+			ctx.beginPath();
+			ctx.moveTo(0,canvas.height/4);
+			this.aa-=this.speed;
+			for (let x = 0; x < width; x++) {
+
+				let scale;
+				x >= width/2? scale = this.pro - (this.pro / width * x) : scale = this.pro / width * x;
+
+			  	const y = Math.sin(x * a + this.aa) * this.amplitude * scale
+			  	const y1 = Math.sin((x-1) * a + this.aa) * this.amplitude * scale
+				ctx.strokeStyle = this.color
+				ctx.lineTo(x*enn,(150+y));
+				
+			}
+			ctx.stroke();
+		}
+	}
+
+//获取canvas应该放大的倍数的方法；
+function getPixelRatio(context) {
+    var backingStore = context.backingStorePixelRatio
+        || context.webkitBackingStorePixelRatio
+        || context.mozBackingStorePixelRatio
+        || context.msBackingStorePixelRatio
+        || context.oBackingStorePixelRatio
+        || context.backingStorePixelRatio || 1;
+    return (window.devicePixelRatio || 1) / backingStore;
+
+};
+function randomFn(a,b){
+    return parseInt(Math.random()*(b-a+1)+a);
+}
+</script>
+</html>

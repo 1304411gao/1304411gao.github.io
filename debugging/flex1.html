@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap{
+			width: 1080px;
+		}
+		ul{
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+		}
+		li.grow2{
+			flex: 2;
+		}
+		li{
+			list-style: none;
+			/*height: 100px;*/
+			outline: 1px solid red;
+			background-color: orange;
+			flex: 1;
+			box-sizing: border-box;
+		}
+		img{
+			width: 100%;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul>
+			<li class="grow2">
+				<img src="https://img.mofyi.com/Ayto/rqokd.jpg" alt="">
+			</li>
+			<li class="grow2">
+				<img src="https://img.mofyi.com/Ayto/rqokd.jpg" alt="">
+			</li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul>
+			<li class="grow2">
+				<img src="https://img.mofyi.com/Ayto/o2k9r.jpg" alt="">
+			</li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

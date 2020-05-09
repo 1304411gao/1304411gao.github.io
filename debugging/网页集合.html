@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/vue/2.5.13/vue.js"></script>
+<style>
+	#app{
+		width: 1080px;
+		margin: 0 auto;
+	}
+	
+	ul{
+		width: 100%;
+		overflow: hidden;
+	}
+	li{
+		list-style: none;
+		width: 20%;
+		float: left;
+		min-height: 20px;
+		text-align: center;
+	}
+	button{
+		display: inline-block;
+		margin: 0 auto;
+		cursor: pointer;
+		margin-top: 15px;
+		padding: 5px 15px;
+		color: #ffffff;
+		font-size: 14px;
+	}
+	#aaa{
+		color: #fff;
+	}
+	#all{
+		display: block;
+		margin: 0 auto;
+		font-size: 14px;
+	}
+</style>
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="n of data">
+				<button id="aaa" class="btn-danger" @click="open(n.href)">{{ n.name }}</button>
+			</li>
+		</ul>
+		<button id="all" @click="openall()" class="btn-danger">全部打开</a>
+	</div>
+</body>
+<script>
+	let app = new Vue({
+ 		el: '#app',
+ 		data: {
+ 			data: [
+ 				{
+ 					name: '中融新大',
+ 					href: [
+ 						"http://www.sdcoking.com/",
+			            "http://www.sdcoking.com/index.php/index/about.html?UCAHLgVzVjQDagM2VncGawBqBihdIFd9AiZSNFZvAmQ%3D",
+			            "http://www.sdcoking.com/index.php/index/industry.html?UCAELQp8VTdXPgI3UHEGa1w2AiwOcwMpUXVXMQc%2BA2M%3D",
+			            "http://www.sdcoking.com/index.php/index/science.html?UiIKIwN1BGYFbFNlDSwHagBqUX8McQYsACQEYgM6AmM%3D",
+			            "http://www.sdcoking.com/index.php/index/join.html?A3MKI1YgBWcAaQI3AiNaNwxmAC5bJgAqCy9QNgM6BWY%3D",
+			            "http://www.sdcoking.com/index.php/index/contact1.html?Am0FMAR7WCsBLAJ2UzEAPg%3D%3D",
+			            "http://www.sdcoking.com/index.php/index/news_detail.html?UD0BNVRvUmwLZ1FkUWdbewFlUGIMfAYhBitTIFMyA2oGMQ%3D%3D",
+			            "http://www.sdcoking.com/index.php/index/about.html?B3cELVQiUTMGb1BmUHFSPw9lVHoOc1V%2FCy9QNg00UzU%3D",
+			            "http://www.sdcoking.com/index.php/index/news_detail.html?B2oHMwM4U21QMwU4ATBQcF05DD5bKwQjU35UJ1AxAWgDNA%3D%3D",
+ 					]
+ 				},
+ 				{
+ 					name: '东方新材',
+ 					href: [
+ 						"http://www.eastnm.com/",
+				        "http://www.eastnm.com/index.php?m=index&a=about&keytype=2&id=anchor1",
+				        "http://www.eastnm.com/index.php?m=index&a=product_learn&keytype=3",
+				        "http://www.eastnm.com/index.php?m=index&a=hardware&keytype=4&id=anchor4",
+				        "http://www.eastnm.com/index.php?m=index&a=quality&keytype=5&id=anchor2",
+				        "http://www.eastnm.com/index.php?m=index&a=responsibility&keytype=6&id=anchor2",
+				        "http://www.eastnm.com/index.php?m=index&a=hr&keytype=7&id=anchor3",
+				        "http://www.eastnm.com/index.php?m=index&a=news&keytype=8",
+				        "http://www.eastnm.com/index.php?m=index&a=contact&keytype=9",
+ 					]
+ 				},
+ 			]
+ 		},
+ 		methods: {
+
+ 			open(_href){
+
+ 				for(let i = 0; i < _href.length; i++){
+ 					window.open(_href[i]);
+ 				}
+ 			},
+ 			openall(){
+
+ 				for(let i = 0; i < this.data.length; i++){
+
+ 					for(let j = 0; j < this.data[i].href.length; j++){
+ 						window.open( this.data[i].href[i]);
+ 					}
+ 				}
+ 			}
+ 		}
+	})
+</script>
+</html>

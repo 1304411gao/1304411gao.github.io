@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<audio id="a" src="" controls preload="auto"></audio>
+	<button id="btn">开始</button>
+</body>
+<script>
+	window.onload = function(){
+		var panoMp3 = [
+		'http://file.dancelion.cn/media/pano1.mp3',
+		'http://file.dancelion.cn/media/pano2.mp3',
+		'http://file.dancelion.cn/media/pano3.mp3'
+		]
+		var mainTimers = [19.344, 31.104, 22.584];
+		var startNodes = [[.001, 3.5, 5, 8.5, 11, 13, 16, mainTimers[0]], [.001, 2.6, 6.6, 11.7, 17.8, 21.3, 26, mainTimers[1]], [.001, 3, 4.7, 8.9, 11.2, 15.4, 19.1, mainTimers[2]]];
+
+		var a = document.getElementById('a')
+		var playBol = false;
+
+
+		
+		var p1 = false;
+		var p2 = false;
+		var p3 = false;
+		btn.onclick = function(){
+			
+			setInterval(function(){
+
+				if(p1){
+					if(p2){
+						if(p3){
+							alert("结束啦！！！")
+						}else{
+							p3 = run(2);
+						}
+					}else{
+						p2 = run(1);
+					}
+				}else{
+					p1 = run(0);
+				}
+				
+			},100);
+		}
+
+
+		function run(_index){
+			if(!playBol){
+				a.src = panoMp3[_index];
+				a.play();
+				playBol = true;
+			}
+
+			var c = a.currentTime;
+
+			for(var i = 0; i < startNodes[_index].length; i++){
+
+			
+				if(c >= mainTimers[_index]){
+					console.log('结束');
+					playBol = false;
+					return true;
+				}else{
+					if(c >= startNodes[_index][i] && c < startNodes[_index][i+1]){
+						console.log('第'+ (i+1) +'句');
+					}
+				}
+			}
+		}
+	}
+</script>
+</html>

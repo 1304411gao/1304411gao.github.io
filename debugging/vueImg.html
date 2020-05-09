@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门之htmlraw</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+
+
+    <div style="display:flex;flex-wrap:wrap;">
+        <!-- //实际上因为 flex-grow 是按比例分配，所以第二个公式里的 *200 可以不要，这要我们就只需要改前一个 200 了 -->
+        <div style="width:{{img.width*200/img.height}}px;flex-grow:{{img.width*200/img.height}}" v-for="img in imgs">
+            <div style="padding-bottom:{{img.height/img.width*100}}%"></div>
+        </div>
+    </div>
+    </script>
+    <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+           imgs: [
+
+                
+           ]
+        },
+        methods: {
+            arrIndexTrans: function(){
+                if(this.arrIndex == 0){
+                    this.arrIndex=1;
+                }else{
+                    this.arrIndex=0;
+                }
+            }
+        },
+        computed: {
+            // 把日期换成 常见规格格式的字符串。
+            getBirthday: function () {
+                var m = new Date(this.birthday);
+                // return m.getFullYear() + '年' + m.getMonth() +'月'+ m.getDay()+'日';
+                return this.arr[this.arrIndex];
+            }
+        }
+    });
+    </script>
+</body>
+</html>

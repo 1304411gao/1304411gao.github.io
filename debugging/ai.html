@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			display:flex;
+			flex-wrap:wrap;
+			width: 80%;
+			margin: 0 auto;
+			outline: 1px solid red;
+		}
+		.box2-1{
+
+		}
+		.box3{
+			position: relative;
+		}
+		.box3 > img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+
+		}
+	</style>
+</head>
+<body>
+	<a href="baidu.com">312</a>
+	 <div class="box1" style="">
+        <!-- //实际上因为 flex-grow 是按比例分配，所以第二个公式里的 *200 可以不要，这要我们就只需要改前一个 200 了 -->
+        <div class="box2" style="display: none">
+            <div class="box3">
+            	<img src="img/page2.jpg" alt="">
+            </div>
+            <div class="box3">
+            	<img src="img/xz.jpg" alt="">
+            </div>
+            <div class="box3">
+            	<img src="img/wallhaven-471974.jpg" alt="">
+            </div>
+            <div class="box3">
+            	<img src="img/shouzi.png" alt="">
+            </div>
+            <div class="box3">
+            	<img src="img/wu.png" alt="">
+            </div>
+            <div class="box3">
+            	<img src="img/wallhaven-279990.jpg" alt="">
+            </div>
+            <div class="box3">
+            	<img src="img/wallhaven-478543.jpg" alt="">
+            </div>
+             <div class="box3">
+            	<img src="img/shouzi.png" alt="">
+            </div>
+            <div class="box3">
+            	<img src="img/wu.png" alt="">
+            </div>
+            <div class="box3">
+            	<img src="img/wallhaven-279990.jpg" alt="">
+            </div>
+            <div class="box3">
+            	<img src="img/wallhaven-478543.jpg" alt="">
+            </div>
+            <div class="box3">
+            	<img src="img/70112223dd54564e1fee79a5b8de9c82d0584f6c.jpg" alt="">
+            </div>
+            <div class="box3">
+            	<img src="img/adabdb1f3a292df561043189b7315c6035a87328.jpg" alt="">
+            </div>
+            
+
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+
+		var $box3 = $(".box3");
+		var height = 150;
+		/* 图片与加载 */
+		var index = 0;
+		for(var i = 0; i < $box3.length; i++){
+
+			var img = new Image();
+
+			img.onload = function(){
+				index ++;
+				console.log(index, this);
+				var html = '<div class="box2-1" style="width:'+ this.width * height / this.height +'px; flex-grow:'+ this.width * height / this.height +'"><div class="box3" style="padding-bottom:'+ this.height/this.width*height/(height/100) +'%"><img src="'+ this.src +'" alt="" /></div></div>';
+				$(".box1").append(html);
+				if(index >= $box3.length){
+					console.log("加载成功");
+				}
+			}
+			img.src = $box3.eq(i).children("img").attr("src");
+		}
+
+
+		window.onbeforeunload = function() {
+		　　return "确定离开页面吗？";
+		}
+	})
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

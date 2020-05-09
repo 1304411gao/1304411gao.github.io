@@ -1,0 +1,236 @@
+var mySwiper;
+$(function(){
+    loadFn({
+        loadImg: {
+            i1: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/a.png",
+            i2: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/again.png",
+            i3: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/am.jpg",
+            i4: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/area.png",
+            i5: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/b.png",
+            i6: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/bg-2.jpg",
+            i7: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/bg.jpg",
+            i8: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/bm.jpg",
+            i9: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/c.png",
+            i10: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/c1.png",
+            i11: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/car.png",
+            i12: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/cc.png",
+            i13: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/chou.png",
+            i14: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/choujiang_03.png",
+            i15: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/city.png",
+            i16: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/cm.png",
+            i17: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/d.png",
+            i18: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/detail.jpg",
+            i19: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/dm.jpg",
+            i20: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/e.png",
+            i21: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/em.png",
+            i22: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/fenshu.png",
+            i23: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/fenx.png",
+            i24: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/gua.png",
+            i25: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/guide.png",
+            i26: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/jiang_ok.png",
+            i27: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/jiang-no.png",
+            i28: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/konw.png",
+            i29: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/next.png",
+            i30: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/no.png",
+            i31: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/ok.png",
+            i32: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/page1-1.jpg",
+            i33: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/page1-1.png",
+            i34: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/page1-bg.jpg",
+            i35: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/page1-ok.png",
+            i36: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/page1-tit.png",
+            i37: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/pai.png",
+            i38: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/paihangbang_03.png",
+            i39: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/plane.png",
+            i40: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t1.png",
+            i41: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t2.png",
+            i42: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t3.png",
+            i43: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t4.png",
+            i44: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t5.png",
+            i45: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t6.png",
+            i46: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t7.png",
+            i47: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t8.png",
+            i48: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t9.png",
+            i49: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t10.png",
+            i50: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t11.png",
+            i51: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t12.png",
+            i52: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t13.png",
+            i53: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t14.png",
+            i54: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t15.png",
+            i55: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t16.png",
+            i56: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t17.png",
+            i57: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t18.png",
+            i58: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t19.png",
+            i59: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/t20.png",
+            i60: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/tou.png",
+            i61: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/txtbg.png",
+            i62: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/yes.png",
+            i63: "http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/zuizhong.png"
+        },
+        complete:init
+    });
+
+    function init(imgs){
+
+        setTimeout(function(){
+            $('#loading').hide();
+            $(".swiper-slide:nth-child(1) > .page1-tit").addClass("jello");
+            $(".swiper-slide:nth-child(1) > .ok").addClass("rubberBand");
+            $(".swiper-slide:nth-child(1) > .plane").addClass("plane");
+        },1000);
+
+        //城市移动
+        var l = 0;
+        var cityTimer = setInterval(function(){
+            l -= .3;
+            if(l<=-100){
+                l = 0;
+            }
+            $(".autoer").css({
+                left: l + "%"
+            })
+        },30)
+    }
+    //数组长度20
+    var answerArr = [
+        [0,0,0,1],  //1
+        [0,0,1,0],  //2
+        [0,0,1,0],  //3
+        [0,0,0,1],  //4
+        [1,0,0,0,0],  //5
+        [0,1,0,0],  //6
+        [0,0,0,1],  //7
+        [1,1,1,1],  //8
+        [1,0,1,0],  //9
+        [1,1,1,1],  //10
+        [0,1,1,0],  //11
+        [1,1,1,0],  //12
+        [1,1,1,0],  //13
+        [1,1,1,1],  //14
+        [1,1,1,1],  //15
+        [0,0,1,0],  //16
+        [1,0,0,0],  //17
+        [1,1,1,1,1],  //18
+        [0,0,1,1,1],  //19
+        [0,0,0,1]  //20
+    ];
+
+    //
+    console.log(libraryArr);
+    //2131231231231231231231232
+    $(".questions").children("ul").children("li").children("span").attr("name","0");
+    //点击开始答题
+    for(var i = 0; i < $(".questions").size();i++){
+        $(".questions").eq(i+2).children("ul").children("li").attr("name",i);
+        $(".questions").eq(i+2).children("ul").children("li").on("touchstart",function(e){
+//			e.stopPropagation();
+            $index = parseInt($(this).attr("name"));
+            if($(this).children("span").attr("name")!= "0"){
+                $(this).children("span").css({
+                    backgroundPosition: "0 0"
+                }).attr("name","0");
+            }else{
+                $(this).children("span").css({
+                    backgroundPosition: "100% 0"
+                }).attr("name","1");
+            }
+        });
+        link(i);
+    }
+    $(".answer .ok").on("touchstart",function(e){
+//		e.stopPropagation();
+        mySwiper.slideNext();
+    });
+    //抽抽奖
+    $(".fenshu > .chou").on("touchstart",function(){
+        mySwiper.slideNext();
+    });
+    //再来一次
+    $(".fenshu .again").on("touchstart",function(){
+        window.location.href = "http://cscec8.newairtek.com/";
+    });
+    //点击抽奖
+    $(".chou-jiang > .chou").on("touchstart",function(){
+
+    });
+    //排行榜
+    // $(".pai").on("touchstart",function(){
+    //     // if(rankBol){
+    //         mySwiper.slideTo(45, 300, true);
+    //     // }
+    //
+    // });
+
+    $(".pai-hang > .ok").on("touchstart",function(){
+        mySwiper.slideTo(43, 300, true);
+    });
+    //分享
+    $(".fenx").on("touchstart",function(){
+        $(".mask").show(150);
+    });
+    $(".mask > .ok").on("touchstart",function(){
+        $(this).parent().hide(150);
+    });
+    // textarea
+    $(".area > textarea").on("touchstart",function () {
+        $(this).focus();
+    });
+    $(".area > .ok").on("touchstart",function(e){
+
+        if($(".area > textarea").val()){
+            mySwiper.slideNext();
+        }else{
+            alert("请输入内容")
+        }
+    });
+    //清楚默认事件
+    $(document).on("touchstart",function(e){
+        e.preventDefault();
+    });
+
+    function link(_i){
+        $(".questions").eq(_i).children(".ok").on("touchstart",function(e){
+//			e.stopPropagation();
+            //将当前页面的index赋在 提交按钮的name上。用于判断。 _i从3开始。
+            var $thisIndex = _i+1;
+
+            //判断 如果不是前2页的话 直接进入下一页
+            if($(this).parent().index()>1){
+                console.log($(this).parent().index());
+                var $span = $(this).siblings("ul").children().children("span");
+                var thisArr = [];
+
+                for(var i = 0; i < $span.size(); i++){
+                    thisArr.push(parseInt($span.eq(i).attr("name")));
+                }
+                var str1 = thisArr.join("");
+                var str2 = answerArr[$thisIndex-3].join("");
+                if(str1 == str2){
+                    // alert("6666答对了");
+                    $(".answer").eq($thisIndex-3).children(".bt").attr("src","http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/yes.png");
+                    mySwiper.slideNext();
+                    results.push(1);
+                }else if(str1 == 0000){
+                    alert("请选择至少一个答案");
+                    // mySwiper.slideNext();
+                }else{
+                    // alert("你答错了");
+                    $(".answer").eq($thisIndex-3).children(".bt").attr("src","http://newairtek-haier.oss-cn-beijing.aliyuncs.com/cscec8/no.png");
+                    mySwiper.slideNext();
+                    results.push(0);
+                }
+                console.log(results);
+            }else{
+                mySwiper.slideNext();
+            }
+        });
+
+    }
+
+
+
+    //随机数函数
+    function randomFn(a,b){
+        return parseInt(Math.random()*(b-a+1)-a);
+    }
+
+});
