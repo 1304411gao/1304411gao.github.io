@@ -11,7 +11,7 @@
         }
         canvas{
             display: block;
-            margin: 100px auto
+            margin: 50px auto
         }
         #text{
             width: 300px;
@@ -34,8 +34,34 @@
             font-size: 14px;
             text-align: center;
             margin-top: 50px;
-            border: 8px;
+            border-radius: 8px;
             margin-bottom: 50px;
+        }
+        #prew{
+
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+        }
+        #prew img{
+            width: 100%;
+            height: auto;
+        }
+        #prew span{
+            font-size: 12px;
+            padding: 5px 10px;
+            position: absolute;
+            top: 5px;
+            right: 0;
+            color: #fff;
         }
     </style>
 </head>
@@ -43,6 +69,10 @@
     <canvas id="mainCanvas"></canvas>
     <input id="text" type="text" value="吔屎啦你？">
     <button id="btn">生成图片</button>
+    <div id="prew">
+        <span id="close">关闭</span>
+        <div id="prew-m"></div>
+    </div>
 </body>
 <script>
     var pr = 3
@@ -50,7 +80,8 @@
     bgImage.src = 'img/bg.png'
     var canvas = document.querySelector('#mainCanvas'),
         text = document.querySelector('#text'),
-        btn = document.querySelector('#btn')
+        btn = document.querySelector('#btn'),
+        close = document.querySelector('#close')
     var ctx = canvas.getContext('2d')
     bgImage.onload = function(){
         canvas.width = this.width / 2
@@ -82,11 +113,8 @@
         if(isWeiXin()){
             var img = new Image()
             img.src = src
-            wx.previewImage({
-                current: src , // 当前显示图片的http链接
-                urls: [src] // 需要预览的图片http链接列表
-            })
-
+            document.querySelector('#prew-m').appendChild(img)
+            document.querySelector('#prew').style.display = 'flex'
 
         }else{
             var a = document.createElement('a')
@@ -95,7 +123,11 @@
             a.click()
         }
     }
+    close.onclick = function(){
 
+        document.querySelector('#prew').style.display = 'none'
+        document.querySelector('#prew-m').innerHTML = ''
+    }
     //判断是否是微信浏览器的函数
     function isWeiXin(){
         //window.navigator.userAgent属性包含了浏览器类型、版本、操作系统类型、浏览器引擎类型等信息，这个属性可以用来判断浏览器类型
